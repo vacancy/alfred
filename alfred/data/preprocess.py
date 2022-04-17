@@ -1,13 +1,13 @@
 import os
 import json
 import revtok
+import vocab
 import torch
 import copy
 import progressbar
-from vocab import Vocab
-from model.seq2seq import Module as model
-from gen.utils.py_util import remove_spaces_and_lower
-from gen.utils.game_util import sample_templated_task_desc_from_traj_data
+from alfred.models.model.seq2seq import Module as model
+from alfred.gen.utils.py_util import remove_spaces_and_lower
+from alfred.gen.utils.game_util import sample_templated_task_desc_from_traj_data
 
 class Dataset(object):
 
@@ -18,9 +18,9 @@ class Dataset(object):
 
         if vocab is None:
             self.vocab = {
-                'word': Vocab(['<<pad>>', '<<seg>>', '<<goal>>']),
-                'action_low': Vocab(['<<pad>>', '<<seg>>', '<<stop>>']),
-                'action_high': Vocab(['<<pad>>', '<<seg>>', '<<stop>>']),
+                'word': vocab.Vocab(['<<pad>>', '<<seg>>', '<<goal>>']),
+                'action_low': vocab.Vocab(['<<pad>>', '<<seg>>', '<<stop>>']),
+                'action_high': vocab.Vocab(['<<pad>>', '<<seg>>', '<<stop>>']),
             }
         else:
             self.vocab = vocab

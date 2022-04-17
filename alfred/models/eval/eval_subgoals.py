@@ -4,8 +4,8 @@ import json
 import numpy as np
 from PIL import Image
 from datetime import datetime
-from env.thor_env import ThorEnv
-from eval import Eval
+from alfred.env.thor_env import ThorEnv
+from .eval import Eval
 
 
 class EvalSubgoals(Eval):

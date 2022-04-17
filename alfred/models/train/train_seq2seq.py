@@ -1,16 +1,12 @@
 import os
-import sys
-sys.path.append(os.path.join(os.environ['ALFRED_ROOT']))
-sys.path.append(os.path.join(os.environ['ALFRED_ROOT'], 'models'))
-
-import os
 import torch
 import pprint
 import json
-from data.preprocess import Dataset
 from importlib import import_module
 from argparse import ArgumentDefaultsHelpFormatter, ArgumentParser
-from models.utils.helper_utils import optimizer_to
+
+from alfred.data.preprocess import Dataset
+from alfred.models.utils.helper_utils import optimizer_to
 
 
 if __name__ == '__main__':

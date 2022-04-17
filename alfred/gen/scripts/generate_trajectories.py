@@ -1,8 +1,5 @@
 import os
 import sys
-sys.path.append(os.path.join(os.environ['ALFRED_ROOT']))
-sys.path.append(os.path.join(os.environ['ALFRED_ROOT'], 'gen'))
-
 import time
 import multiprocessing as mp
 import json
@@ -14,12 +11,12 @@ import pandas as pd
 from collections import OrderedDict
 from datetime import datetime
 
-import constants
-from agents.deterministic_planner_agent import DeterministicPlannerAgent
-from env.thor_env import ThorEnv
-from game_states.task_game_state_full_knowledge import TaskGameStateFullKnowledge
-from utils.video_util import VideoSaver
-from utils.dataset_management_util import load_successes_from_disk, load_fails_from_disk
+import alfred.gen.constants as constants
+from alfred.gen.agents.deterministic_planner_agent import DeterministicPlannerAgent
+from alfred.env.thor_env import ThorEnv
+from alfred.gen.game_states.task_game_state_full_knowledge import TaskGameStateFullKnowledge
+from alfred.gen.utils.video_util import VideoSaver
+from alfred.gen.utils.dataset_management_util import load_successes_from_disk, load_fails_from_disk
 
 # params
 RAW_IMAGES_FOLDER = 'raw_images/'
